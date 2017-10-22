@@ -1,72 +1,30 @@
-## Project: Perception Pick & Place
-### Writeup Template: You can use this file as a template for your writeup if you want to submit it as a markdown file, but feel free to use some other method and submit a pdf if you prefer.
-
+## Project: Follow Me Project
 ---
 ### Writeup / README
 
-#### 1. Provide a Writeup / README that includes all the rubric points and how you addressed each one.  You can submit your writeup as markdown or pdf.
-You're reading it!
+#### 1. The write-up conveys the an understanding of the network architecture.
 
-### Exercise 1, 2 and 3 pipeline implemented
-#### 1. Complete Exercise 1 steps. Pipeline for filtering and RANSAC plane fitting implemented.
+Encoder Block use separable covolution layer. This block uses  smaller parameters than same size convolutions.
 
+Decoder block use bilinear_upsampling and concarenate the upsample and large input layers .
 
-[//]: # (Image References)
+#### 2. The write-up conveys the student's understanding of the parameters chosen for the the neural network.
 
-[image1]: ./misc_images/objects.png
-[image2]: ./misc_images/segmentation.png
-[image3]: ./misc_images/train_svm.png
-[image4]: ./misc_images/object_recognition.png
-[image5]: ./misc_images/test1.png
-[image6]: ./misc_images/test2.png
-[image7]: ./misc_images/test3.png
+I use the graph to decide the parameters.
+train_loss and val_loss are both decreasing.
 
+#### 3. The student has a clear understanding and is able to identify the use of various techniques and concepts in network layers indicated by the write-up.
 
-I modify RANSAC.py.
-I attach the file.
+1 by 1 convolutions use  after encoder layers.
 
-![alt text][image1]
+fully connected layer use after decode block. this layer  use final part of network.
 
+#### 4. The student has a clear understanding of image manipulation in the context of the project indicated by the write-up.
 
-#### 2. Complete Exercise 2 steps: Pipeline including clustering for segmentation implemented.  
+I use encoder to classify the pixel. and I use decoder layer to
+Encoder layers are compress the data and lost the several data.
+Decoder layers chage the abstract features to the pictures.
 
-I copy template.py. and I call new fie segmentation.py.
-I segmentate the 6 objects.
+#### 5.The student displays a solid understanding of the limitations to the neural network with the given data chosen for various follow-me scenarios which are conveyed in the write-up.
 
-![alt text][image2]
-
-#### 2. Complete Exercise 3 Steps.  Features extracted and SVM trained.  Object recognition implemented.
-
-To get better features, open up the featrues.py
-
-I change the 3 point.
-
-1. histogram: I use color and normal.
-2. orientation: I use 5 orientation to train the object.
-3. color:I use HSV.
-
-I inprove the accuracy .(0.3 to 0.9 )
-![alt text][image3]
-
-![alt text][image4]
-
-
-### Pick and Place Setup
-
-#### 1. For all three tabletop setups (`test*.world`), perform object recognition, then read in respective pick list (`pick_list_*.yaml`). Next construct the messages that would comprise a valid `PickPlace` request output them to `.yaml` format.
-
-test1.world
-![alt text][image5]
-
-test2.world
-![alt text][image6]
-
-test3.world
-![alt text][image7]
-
-
-
-
-Spend some time at the end to discuss your code, what techniques you used, what worked and why, where the implementation might fail and how you might improve it if you were going to pursue this project further.  
-
-I train the objects more times and need to fit the features.
+this model and data doesn't work well . we need to add the data of another objects.
