@@ -8,6 +8,7 @@
 [image1]: encoder_block.png
 [image2]: decoder_block.png
 [image3]: model_weights.PNG
+[image4]: layers.png
 Encoder Block use separable covolution layer. This block uses  smaller parameters than same size convolutions.
 
 
@@ -24,6 +25,8 @@ The model represent below.
 ![alt text][image3]
 
 
+![alt text][image4]
+
 #### 2. The write-up conveys the student's understanding of the parameters chosen for the the neural network.
 
 I use the graph to decide the parameters.
@@ -31,6 +34,13 @@ train_loss and val_loss are both decreasing.
 if I reduce number of epochs or increase learning rate , the model is overfit the data. training error decrease, but validation error increase.
 I use batch to calculate efficient.
 If batch size is big , I need to big memory.
+batch_size: number of training samples/images that get propagated through the network in a single pass. now we use 128 images.
+num_epochs: the number of epochs to train for. number of times the entire training dataset gets propagated through the network.
+Using bigger num_epochs improve accuracy. but we need to be attention to overfit.
+steps_per_epoch: the number of batches per epoch. this number decide to update the gradient.
+workers: maximum number of processes to spin up. This can affect the training speed and is dependent on the hardware.
+
+
 
 #### 3. The student has a clear understanding and is able to identify the use of various techniques and concepts in network layers indicated by the write-up.
 
