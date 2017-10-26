@@ -10,6 +10,7 @@
 [image3]: model_weights.PNG
 Encoder Block use separable covolution layer. This block uses  smaller parameters than same size convolutions.
 
+
 ![alt text][image1]
 
 
@@ -40,9 +41,13 @@ fully connected layer use after decode block. this layer  use final part of netw
 
 #### 4. The student has a clear understanding of image manipulation in the context of the project indicated by the write-up.
 
-I use encoder to classify the pixel. and I use decoder layer to
-Encoder layers are compress the data and lost the several data.
-Decoder layers chage the abstract features to the pictures.
+I use encoder to classify the pixel.
+Encoder layers are compress the data and lost the several data. Encoder layers obtain the features. the features is more abstract the layers is deeper.
+
+Decoder layers changes the abstract features to the pictures.
+Using upsampling method gives us the higher dimensions.
+to use this method lose some details.
+The concatenation connection reflect the features that are lost in encoder block.
 
 #### 5.The student is able to clearly articulate whether this model and data would work well for following another object (dog, cat, car, etc.) instead of a human and if not, what changes would be required.
 
@@ -53,5 +58,9 @@ this model and data doesn't work well . we need to add the data of another objec
 I represent the method to improve accuracy and model.
 
 1. adding the data
+adding the data is helpful to place without any bias.
 2. improve the data
+for example , if object is too small, the features are not clear in the image.
+Model mistake the noise  for the features.
 3. changing the activation function
+There are several activation function. some function can learning. this will improve the accuracy.
