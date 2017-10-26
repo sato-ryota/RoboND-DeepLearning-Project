@@ -45,8 +45,8 @@ workers: maximum number of processes to spin up. This can affect the training sp
 #### 3. The student has a clear understanding and is able to identify the use of various techniques and concepts in network layers indicated by the write-up.
 
 1 by 1 convolutions use  after encoder layers. I use 1 by 1 convolutions to reduce dimension.
-they're just matrix multiplies and they have relatively few parameters. this is a very inexpensive  way to make the models deeper and have more parameters.
-this model is
+spatial information will be preserved.
+they're just matrix multiplies and they have relatively few parameters.
 fully connected layer use after decode block. this layer  use final part of network.
 
 #### 4. The student has a clear understanding of image manipulation in the context of the project indicated by the write-up.
